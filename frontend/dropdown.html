@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            User Data Collector
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style1.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://kit.fontawesome.com/657d0752d9.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <header>
+            <nav>
+                <div class="logo">   
+                    <div>
+                        <h3> Anywhere app.</h3>      
+                    </div>                 
+                    <div class="left-nav">
+                        <ul>
+                            <li><a href="#product">Product
+                                <i class="fa-solid fa-angle-down"></i>
+                            </a>
+                               
+                            </li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#company">Company
+                                <i class="fa-solid fa-angle-down"></i>
+                            </a>
+                              
+                            </li>
+                            <li><a href="navigation.html">Dashboard</a></li>                     
+                        </ul>
+                    </div>         
+                </div>
+                
+                <div class="navigation">
+                    <ul>
+                        <li><a href="form.html">Dark</a></li>
+                        <li><a href="dropdown.html">Light</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="container">
+                <h4>START FOR FREE</h4>
+                <h1>Create new account<span class="dot">.</span></h1>
+                <p class="member">Already A Memeber? <span class="log">Log In</span></p>
+                <p class="message" id="message"></p>
+                <form>
+                    <div class="first-name">
+                        <div class="input">
+                            <label>First Name</label>
+                            <input type="text" name="first_name" id="first_name" required autocomplete="off"/>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-address-card"></i>
+                        </div>
+                    </div>
+
+                    <div class="last-name">
+                        <div class="input">
+                            <label>Last Name</label>
+                            <input type="text" name="last_name" id="last_name" required autocomplete="off"/>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-address-card"></i>
+                        </div>
+                    </div>
+
+                    <div class="age">
+                        <div class="input">
+                            <label for="age">Age:</label>
+                            <select name="age" id="age" required>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="gender">
+                        <div class="input">
+                            <label for="gender">Gender:</label>
+                            <select name="gender" id="gender" name="gender" required>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>               
+                    </div>
+
+                    <div class="city">
+                        <div class="input">                   
+                            <label for="city">City:</label>
+                            <select name="city" id="city" name="city" required>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <option value="Mohali">Mohali</option>
+                                <option value="Zirkpur">Zirkpur</option>
+                                <option value="Ambala">Ambala</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="email">
+                        <div class="input">
+                            <label>Email ID</label>
+                            <input type="email" name="email" id="email" required autocomplete="off"/>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                    </div>
+
+                    <div class="avatar">
+                        <div class="input">
+                            <label>Avatar Uploaded</label>
+                            <input type="file" id="file" name="file" required accept=".jpg,.png">
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                        </div>
+                    </div>
+            
+                    <div class="button">
+                        <input class="submit"
+                        type="submit"
+                        value="save"
+                        id="submit">
+                    </div>
+                </form>
+            </div>
+        </main>
+        <script>
+            $(document).ready(function () {
+                $('form').submit(function (e) {
+                    e.preventDefault();
+                    if (first_name != '' && last_name != '' && age != '' && gender != '' && city != '' && email != '') {
+                        var first_name = document.getElementById('first_name').value;
+                        var last_name = document.getElementById('last_name').value;
+                        var age = document.getElementById('age').value;
+                        var gender = document.getElementById('gender').value;
+                        var city = document.getElementById('city').value;
+                        var email = document.getElementById('email').value;
+    
+                        var formData = new FormData();
+                        formData.append('file',file.files[0])
+                        formData.append('first_name',first_name)
+                        formData.append('last_name',last_name)
+                        formData.append('age',age);
+                        formData.append('gender',gender);
+                        formData.append('city',city);
+                        formData.append('email',email);
+                        console.log(formData)
+                        var type = file.files[0].type
+    
+                        
+                            var xhttp = new XMLHttpRequest();                     
+                        xhttp.open('POST', "http://localhost:7000/", true);
+                         
+                        xhttp.onreadystatechange = function () {
+                            if (this.readyState == 4 && this.status == 200) {
+                                alert('Insert successfully')
+                            }
+                        };
+                        document.getElementById('message').innerHTML = 'User data collected'
+                        xhttp.send(formData);
+                        
+                              
+                    }
+                    document.getElementById('first_name').value = '';
+                    document.getElementById('last_name').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('file').value = '';
+
+                })
+            })
+        </script>
+    </body>
+</html>
