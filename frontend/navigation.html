@@ -131,7 +131,7 @@
                 var table = document.getElementById('myTable');
                 for(var i= 0;i< data.length;i++){
                     console.log(data[i])
-                    var id = data[i]._id
+                    var image = data[i].filepath
                     var first_name = data[i].field.first_name;
                     var last_name = data[i].field.last_name;
                     var age = data[i].field.age;
@@ -144,9 +144,9 @@
                     // var img = document.createElement('img');
                     // img.src = data[i].image;
                     // x.appendChild(img)
-                    console.log(id,first_name,last_name,age,gender,city,email)
+                    console.log(image,first_name,last_name,age,gender,city,email)
                     var row = `<tr>
-                                    <td>${id}</td>
+                                    <td><img src = ${image} id="image-path"/> </td>
                                     <td>${first_name} ${last_name}</td>
                                     <td>${age}</td>
                                     <td>${gender}</td>
